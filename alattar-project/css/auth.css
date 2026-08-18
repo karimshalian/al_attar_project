@@ -1,0 +1,59 @@
+/* Al-Attar — auth.css */
+.auth-ov{position:fixed;inset:0;background:rgba(20,30,20,.4);z-index:200;animation:authfade .2s}
+@keyframes authfade{from{opacity:0}to{opacity:1}}
+.auth-panel{position:fixed;top:50%;inset-inline-start:50%;transform:translate(-50%,-50%);z-index:201;width:380px;max-width:calc(100vw - 32px);max-height:calc(100vh - 60px);overflow-y:auto;background:#fff;border-radius:18px;box-shadow:0 30px 70px rgba(12,32,22,.35);font-family:'Tajawal',system-ui,sans-serif;animation:authpop .25s cubic-bezier(.2,.9,.3,1)}
+@keyframes authpop{from{transform:translate(-50%,-46%) scale(.96);opacity:0}to{transform:translate(-50%,-50%) scale(1);opacity:1}}
+.auth-panel-head{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--line, #e7ded0);background:var(--green,#1d5632);color:#fff;border-radius:18px 18px 0 0}
+.auth-x{background:rgba(255,255,255,.16);border:none;color:#fff;border-radius:8px;width:28px;height:28px;font-size:13px}
+.auth-panel-body{padding:20px 18px}
+.auth-field{width:100%;box-sizing:border-box;border:1px solid var(--line,#e7ded0);border-radius:11px;padding:12px 14px;font-size:14px;font-family:inherit;margin-bottom:10px;outline:none}
+.auth-field:focus{border-color:var(--green,#1d5632)}
+.auth-submit{width:100%;background:var(--green,#1d5632);color:#fff;border:none;border-radius:11px;padding:13px;font-size:14.5px;font-weight:700;margin-top:4px}
+.auth-submit:disabled{opacity:.6}
+.auth-submit:hover:not(:disabled){background:var(--green-dk,#143d24)}
+.auth-switch{display:block;width:100%;background:none;border:none;color:var(--green,#1d5632);font-size:13px;text-align:center;margin-top:14px;font-weight:700}
+.auth-err{background:#fdf3ef;color:#8a3421;border:1px solid #f0d8d0;border-radius:10px;padding:10px 12px;font-size:12.5px;margin-bottom:12px}
+
+.auth-social{display:flex;flex-direction:column;gap:9px;margin-bottom:16px}
+.auth-social-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#fff;border:1px solid var(--line,#e7ded0);border-radius:11px;padding:11px;font-size:13.5px;font-weight:700;font-family:inherit;color:var(--ink,#20180f);transition:background .2s,border-color .2s}
+.auth-social-btn img{width:18px;height:18px;flex-shrink:0}
+.auth-social-btn:hover{background:var(--paper2,#f2ece0);border-color:#d8cfbc}
+.auth-social-btn.facebook{color:#1877f2;border-color:#c9dcfb}
+.auth-social-btn.facebook:hover{background:#f2f7ff}
+
+.auth-or{position:relative;text-align:center;margin:4px 0 16px}
+.auth-or::before{content:"";position:absolute;top:50%;inset-inline-start:0;inset-inline-end:0;height:1px;background:var(--line,#e7ded0)}
+.auth-or span{position:relative;background:#fff;padding:0 12px;font-size:11.5px;color:var(--muted,#7a705f)}
+.auth-loading,.auth-empty{text-align:center;color:var(--muted,#7a705f);padding:30px 0;font-size:13.5px}
+
+.auth-menu{position:fixed;top:74px;inset-inline-end:22px;z-index:201;width:220px;background:#fff;border-radius:14px;box-shadow:0 20px 50px rgba(12,32,22,.25);overflow:hidden;font-family:'Tajawal',system-ui,sans-serif;animation:authpop .18s ease}
+.auth-menu-hi{padding:14px 16px;font-weight:700;font-size:13.5px;color:var(--green-dk,#143d24);border-bottom:1px solid var(--line,#e7ded0)}
+.auth-menu-item{display:block;width:100%;box-sizing:border-box;text-align:start;background:none;border:none;padding:12px 16px;font-size:13.5px;color:var(--ink,#20180f);font-family:inherit}
+.auth-menu-item:hover{background:var(--paper2,#f2ece0)}
+.auth-menu-item.danger{color:#a8442b}
+
+.order-card{border:1px solid var(--line,#e7ded0);border-radius:12px;padding:12px 13px;margin-bottom:10px}
+.order-card-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:12.5px}
+.order-status{background:var(--paper2,#f2ece0);color:var(--green-dk,#143d24);border-radius:999px;padding:3px 10px;font-size:11px;font-weight:700}
+.oi-row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted,#7a705f);padding:3px 0}
+.order-card-total{display:flex;justify-content:space-between;border-top:1px solid var(--line,#e7ded0);margin-top:8px;padding-top:8px;font-size:13.5px}
+
+.accounticon{position:relative;background:none;border:none;font-size:19px;color:var(--green,#1d5632);padding:0 2px;cursor:pointer}
+.accounticon.logged-in::after{content:"";position:absolute;top:-2px;inset-inline-end:-2px;width:8px;height:8px;border-radius:50%;background:#8fdca8;border:2px solid #fff}
+
+/* Loyalty rewards */
+.rewards-panel{width:430px}
+.reward-balance{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.reward-balance>div{background:var(--paper2,#f2ece0);border-radius:12px;padding:14px}
+.reward-balance span{display:block;font-size:11.5px;color:var(--muted,#7a705f);margin-bottom:5px}
+.reward-balance b{font-size:18px;color:var(--green-dk,#143d24)}
+.reward-expiry{padding:9px 11px;background:#f7f4e9;border-radius:9px;color:#7d621d;font-size:11.5px;margin-bottom:10px}
+.reward-rule{font-size:11.5px;line-height:1.65;color:var(--muted,#7a705f);padding-bottom:14px;border-bottom:1px solid var(--line,#e7ded0)}
+.reward-history{margin-top:10px}
+.reward-tx{display:flex;justify-content:space-between;align-items:center;padding:10px 2px;border-bottom:1px solid var(--line,#e7ded0)}
+.reward-tx div{min-width:0}
+.reward-tx b{display:block;font-size:12.5px;color:var(--ink,#20180f)}
+.reward-tx span{display:block;font-size:10.5px;color:var(--muted,#7a705f);margin-top:2px}
+.reward-tx strong{font-size:13px}
+.reward-tx strong.plus{color:var(--green,#1d5632)}
+.reward-tx strong.minus{color:#a8442b}
